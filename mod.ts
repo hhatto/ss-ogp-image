@@ -11,8 +11,8 @@ async function handleRequest(request: Request) {
   const binaryFontURL = new URL("Roboto-Regular.ttf", import.meta.url);
   const binaryFont = await fetch(binaryFontURL).then(res => res.arrayBuffer());
 
-  const helloText = Image.renderText(new Uint8Array(binaryFont), 120, "hello", 0xffffffff);
-  baseImage.composite(helloText, 30, 100);
+  // const helloText = Image.renderText(new Uint8Array(binaryFont), 120, "hello", 0xffffffff);
+  // baseImage.composite(helloText, 30, 100);
 
   const encoded = await baseImage.encode(1);
 
