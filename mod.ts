@@ -6,8 +6,8 @@ async function handleRequest(request: Request) {
   const binary = await fetch(new URL("base.png", import.meta.url));
   const baseImage = await Image.decode(binary.body);
 
-  const binaryFont = await fetch(new URL("Roboto-Regular.ttf", import.meta.url);
-  const font = binary.body;
+  const binaryFont = await fetch(new URL("Roboto-Regular.ttf", import.meta.url));
+  const font = binaryFont.body;
 
   const helloText = Image.renderText(font, 120, "hello", 0xffffffff);
   baseImage.composite(helloText, 30, 100);
