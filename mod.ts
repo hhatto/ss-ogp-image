@@ -3,7 +3,9 @@ import { Image } from "https://deno.land/x/imagescript@1.2.6/mod.ts";
 async function handleRequest(request: Request) {
   const { pathname } = new URL(request.url);
 
-  const binary = await fetch(new URL("base.png", import.meta.url));
+  console.log(import.meta.url);
+  const binaryURL = new URL("base.png", import.meta.url);
+  const binary = await fetch(binaryURL);
   const baseImage = await Image.decode(binary.body);
 
   const binaryFont = await fetch(new URL("Roboto-Regular.ttf", import.meta.url));
